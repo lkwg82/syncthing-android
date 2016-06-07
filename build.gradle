@@ -20,10 +20,9 @@ repositories {
     mavenCentral()
     jcenter()
 }
-
 dependencies {
     compile 'eu.chainfire:libsuperuser:1.0.0.201602271131'
-    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:design:23.3.0'
     compile 'com.google.zxing:android-integration:3.2.1'
     compile 'com.google.code.gson:gson:2.6.2'
     androidTestCompile 'com.squareup.okhttp:mockwebserver:2.4.0'
@@ -33,27 +32,32 @@ project.archivesBaseName = 'syncthing'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
-
-    useLibrary 'org.apache.http.legacy'
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.nutomic.syncthingandroid"
         minSdkVersion 11
         targetSdkVersion 23
-        versionCode 89
-        versionName "0.7.13"
+        versionCode 96
+        versionName "0.7.19"
         testApplicationId 'com.nutomic.syncthingandroid.test'
         testInstrumentationRunner 'android.test.InstrumentationTestRunner'
         testHandleProfiling true
         testFunctionalTest true
     }
 
-    sourceSets {
-        main {
-            jniLibs.srcDir file("libs/")
-        }
-    }
+    // Without this parameter, all builds fail with error:
+    //     Execution failed for task ':mergeArmeabiDebugResources'.
+    //     > Some file crunching failed, see logs for details
+    // https://code.google.com/p/android/issues/detail?id=163378
+    //
+    // NOTE: Setting this causes a crash when opening the DeviceFragment:
+    //       Resources$NotFoundException: File res/drawable/ic_tag_text_outline_black_24dp.xml
+    //       This means we can't use build tools 2.0 until this is fixed.
+    //aaptOptions.setProperty("cruncherEnabled", false)
+
+    // We haven't upgraded to the new HTTP library yet.
+    useLibrary 'org.apache.http.legacy'
 
     signingConfigs {
         release {
@@ -105,9 +109,7 @@ task buildNative(type: Exec) {
 }
 
 task cleanNative(type: Delete) {
-    delete 'bin/'
-    delete 'build/'
-    delete 'libs/'
+    delete 'src/main/jniLibs/'
     delete 'ext/syncthing/bin/'
     delete 'ext/syncthing/pkg/'
 }

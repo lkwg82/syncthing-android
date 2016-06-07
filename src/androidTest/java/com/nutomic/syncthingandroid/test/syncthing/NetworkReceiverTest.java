@@ -1,6 +1,7 @@
 package com.nutomic.syncthingandroid.test.syncthing;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.preference.PreferenceManager;
 import android.test.AndroidTestCase;
 import android.test.suitebuilder.annotation.MediumTest;
@@ -40,7 +41,7 @@ public class NetworkReceiverTest extends AndroidTestCase {
                 .edit()
                 .putBoolean(SyncthingService.PREF_ALWAYS_RUN_IN_BACKGROUND, true)
                 .commit();
-        mReceiver.onReceive(mContext, null);
+        mReceiver.onReceive(mContext, new Intent(ConnectivityManager.CONNECTIVITY_ACTION));
         assertEquals(1, mContext.getReceivedIntents().size());
 
         Intent receivedIntent = mContext.getReceivedIntents().get(0);
@@ -55,7 +56,7 @@ public class NetworkReceiverTest extends AndroidTestCase {
                 .edit()
                 .putBoolean(SyncthingService.PREF_ALWAYS_RUN_IN_BACKGROUND, false)
                 .commit();
-        mReceiver.onReceive(mContext, null);
+        mReceiver.onReceive(mContext, new Intent(Intent.ACTION_POWER_CONNECTED));
         assertEquals(0, mContext.getReceivedIntents().size());
     }
 

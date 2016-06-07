@@ -38,8 +38,6 @@
 
     <string name="folder_rejected">Device %1$s wants to share folder %2$s</string>
 
-    <string name="ignore">Ignore</string>
-
     <!-- FoldersFragment -->
 
 
@@ -99,6 +97,9 @@
 
     <!-- Setting title -->
     <string name="folder_id">Folder ID</string>
+
+    <!-- Setting title -->
+    <string name="folder_label">Folder Label</string>
 
     <!-- Setting title -->
     <string name="directory">Directory</string>
@@ -344,7 +345,7 @@ Please report any problems you encounter via Github.</string>
     <string name="report_issue_summary">Open the Syncthing-Android issue tracker</string>
 
     <!-- URL of the issue tracker -->
-    <string name="issue_tracker_url" translatable="false">https://github.com/Nutomic/syncthing-android/issues</string>
+    <string name="issue_tracker_url" translatable="false">https://github.com/syncthing/syncthing-android/issues</string>
 
 
     <!-- Menu item to donate -->
@@ -420,6 +421,9 @@ Please report any problems you encounter via Github.</string>
     <!-- Toast shown if syncthing failed to create a config -->
     <string name="config_create_failed">Failed to create a Syncthing config. Please check the logs.</string>
 
+    <!-- Label of the default folder created of first start (camera folder). -->
+    <string name="default_folder_label">Camera</string>
+
     <!-- ID of the default folder created on first start (camera folder). Must only contain 'a-z0-9_-'. Parameter is the device name-->
     <string name="default_folder_id">%1$s-photos</string>
 
@@ -470,4 +474,5 @@ Please report any problems you encounter via Github.</string>
     <!-- Format string for folder size, eg "500 MiB / 1 GiB" -->
     <string name="folder_size_format">%1$s / %2$s</string>
 
+    <string name="appconfig_receiver_background_enabled">Stopping Syncthing is not supported when running in background is enabled.</string>
 </resources>

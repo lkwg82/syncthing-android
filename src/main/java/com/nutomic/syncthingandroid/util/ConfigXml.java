@@ -232,10 +232,11 @@ public class ConfigXml {
                 .replace(" ", "_")
                 .toLowerCase(Locale.US)
                 .replaceAll("[^a-z0-9_-]", "");
+        folder.setAttribute("label", mContext.getString(R.string.default_folder_label));
         folder.setAttribute("id", mContext.getString(R.string.default_folder_id, model));
         folder.setAttribute("path", Environment
                 .getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath());
-        folder.setAttribute("ro", "true");
+        folder.setAttribute("type", "readonly");
         saveChanges();
     }
 

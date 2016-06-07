@@ -19,7 +19,7 @@
   <string name="open_website">Abrir site</string>
   <string name="toast_write_storage_permission_required">A permissão de escrita em armazenamento é obrigatória para este aplicativo</string>
   <string name="device_rejected">O dispositivo %1$s quer se conectar</string>
-  <string name="ignore">Ignorar</string>
+  <string name="folder_rejected">O dispostivo %1$s deseja compartilhar a pasta %2$s</string>
   <!--FoldersFragment-->
   <string name="folders_fragment_title">Pastas</string>
   <!--Shown if no folders exist-->
@@ -51,12 +51,12 @@
   <string name="ram_usage">Uso de RAM</string>
   <!--Title for announce server status-->
   <string name="announce_server">Servidor de busca global</string>
-  <!--Menu item to donate-->
-  <string name="donate_title">Doações</string>
   <string name="restart">Reiniciar</string>
   <!--FolderSettingsFragment-->
   <!--Setting title-->
   <string name="folder_id">ID da pasta</string>
+  <!--Setting title-->
+  <string name="folder_label">Rótulo da pasta</string>
   <!--Setting title-->
   <string name="directory">Pasta</string>
   <!--Setting title-->
@@ -137,7 +137,7 @@ Por favor, informe-nos sobre quaisquer problemas via Github.</string>
   <!--Preference title-->
   <string name="always_run_in_background">Sempre rodar em segundo plano</string>
   <!--Preference summary in case it is enabled-->
-  <string name="always_run_in_background_enabled">O Syncthing sempre rodará em segundo plano, de acordo com as preferências abaixo.</string>
+  <string name="always_run_in_background_enabled">O Syncthing sempre rodará em segundo plano de acordo com as preferências abaixo.</string>
   <!--Preference summary in case it is disabled-->
   <string name="always_run_in_background_disabled">O Syncthing sempre rodará quando iniciado manualmente e pode ser parado pelo botão de menu.</string>
   <string name="sync_only_charging">Somente durante o carregamento</string>
@@ -209,6 +209,9 @@ Por favor, informe-nos sobre quaisquer problemas via Github.</string>
   <!--Summary for the issue tracker settings item-->
   <string name="report_issue_summary">Abrir o gerenciador de problemas do Syncthing-Android</string>
   <!--URL of the issue tracker-->
+  <!--Menu item to donate-->
+  <string name="donate_title">Doações</string>
+  <string name="donate_summary">Ajude-nos a pagar a manutenção de domínios e servidores</string>
   <!--Title of the preference showing upstream version name-->
   <string name="syncthing_version_title">Versão do Syncthing</string>
   <!--Title of the preference showing this app's version name-->
@@ -249,6 +252,8 @@ Por favor, informe-nos sobre quaisquer problemas via Github.</string>
   <string name="toast_folder_observer_stack_overflow">Árvore de diretórios profunda demais. Verifique links simbólicos cíclicos.</string>
   <!--Toast shown if syncthing failed to create a config-->
   <string name="config_create_failed">Ocorreu um erro tentando configurar o Syncthing. Por favor, verifique os logs.</string>
+  <!--Label of the default folder created of first start (camera folder).-->
+  <string name="default_folder_label">Câmera</string>
   <!--ID of the default folder created on first start (camera folder). Must only contain 'a-z0-9_-'. Parameter is the device name-->
   <string name="default_folder_id">%1$s-fotos</string>
   <!--RestApi-->
@@ -287,4 +292,5 @@ Por favor, informe-nos sobre quaisquer problemas via Github.</string>
   <string name="state_unknown">Desconhecido</string>
   <!--Format string for folder size, eg "500 MiB / 1 GiB"-->
   <string name="folder_size_format">%1$s / %2$s</string>
+  <string name="appconfig_receiver_background_enabled">Não é possível parar o Syncthing enquanto ele estiver configurado para rodar em segundo plano.</string>
 </resources>
